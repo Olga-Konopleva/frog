@@ -1,0 +1,55 @@
+.btn {
+  position: relative;
+  margin: 150px;
+  padding: 20px 60px;
+  background-color: yellow;
+  color: black;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  transition-delay: 0ms, 250ms;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn::after,
+.btn::before {
+  content: '';
+  display: inline-flex;
+  width: 35px;
+  height: 35px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transition: transform 350ms linear;
+}
+
+.btn::after {
+  margin-left: 15px;
+  background-image: url(../images/frog2.png);
+}
+
+.btn:hover::after {
+  transform: translateY(-55px);
+}
+
+.btn::before {
+  position: absolute;
+  top: 105%;
+  left: 63%;
+  
+  background-image: url(../images/frog.png);
+}
+
+.btn:hover::before {
+  transform: translateY(-60px);
+}
